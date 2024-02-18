@@ -1,10 +1,9 @@
-SQLAlchemy
-flask-restx
-Faker
-Flask
-Flask-SQLAlchemy
-Flask-WTF
+Faker==23.1.0
+Flask==3.0.1
+Flask-SQLAlchemy==3.1.1
 gunicorn
-Werkzeug
-Jinja2
+Werkzeug==3.0.0
+Jinja2==3.1.2
 email_validator
+WTForms~=3.1.2
+flask-wtf==1.2.1
