@@ -1,0 +1,10 @@
+SQLAlchemy
+flask-restx
+Faker
+Flask
+Flask-SQLAlchemy
+Flask-WTF
+gunicorn
+Werkzeug
+Jinja2
+email_validator
