@@ -10,7 +10,7 @@ app.config['DEBUG'] = False
 db_variables = {}
 with open("db.env", "r") as f:
     for line in f:
-        key, value = line.split("=", 1)
+        key, value = line.strip().split("=")
         db_variables[key] = value
 
 # Database
