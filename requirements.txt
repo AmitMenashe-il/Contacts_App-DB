@@ -8,3 +8,4 @@ gunicorn==21.2.0
 Werkzeug==2.0.3
 Jinja2==3.0.0
 email_validator
+psycopg2-binary
