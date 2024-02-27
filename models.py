@@ -1,9 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+db_variables = {}
+with open("db.env", "r") as f:
+    for line in f:
+        key, value = line.split("=", 1)
+        db_variables[key] = value
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/book'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_variables["POSTGRES_USER"]}:{db_variables["POSTGRES_PASSWORD"]}@contacts-db/{db_variables["POSTGRES_DB"]}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
