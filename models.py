@@ -8,7 +8,7 @@ with open("db.env", "r") as f:
         db_variables[key] = value
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_variables["POSTGRES_USER"]}:{db_variables["POSTGRES_PASSWORD"]}@contacts-db/{db_variables["POSTGRES_DB"]}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_variables["POSTGRES_USER"]}@contacts-db/{db_variables["POSTGRES_DB"]}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
